@@ -4,7 +4,7 @@ A Spotify-inspired responsive web music player built using **HTML, CSS, and Java
 
 ## 🌐 Live Demo
 
-[View Live Demo](https://niteshp123.github.io/spotify-clone/)
+[View Live Demo](https://niteshp123.github.io/Spotify-Clone/)
 
 ## 📸 Preview
 
