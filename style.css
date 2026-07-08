@@ -1,0 +1,766 @@
+/* ==========================
+   RESET & GLOBAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Montserrat",sans-serif;
+    background:#000;
+    color:#fff;
+    overflow:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:#fff;
+}
+
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+.main{
+    display:flex;
+    height:calc(100vh - 72px);
+    padding:0.5rem;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+    width:340px;
+    background:#000;
+    border-radius:1rem;
+    margin-right:.5rem;
+    overflow:hidden;
+    transition:transform .35s ease;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:0;
+height:100vh;
+width:300px;
+
+margin-right:0;
+
+transform:translateX(-100%);
+
+z-index:2000;
+
+}
+
+.sidebar.show{
+transform:translateX(0);
+}
+
+}
+
+/* ==========================
+   MAIN CONTENT
+========================== */
+
+.main_content{
+    flex:1;
+    min-width: 0;
+    background:#121212;
+    border-radius:1rem;
+    overflow:auto;
+    padding:0 1.5rem;
+    transition:.4s ease;
+}
+
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+
+.main_content::-webkit-scrollbar{
+    width:10px;
+}
+
+.main_content::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:20px;
+}
+
+.main_content::-webkit-scrollbar-thumb:hover{
+    background:#666;
+}
+
+/* ==========================
+   SIDEBAR NAVIGATION
+========================== */
+
+.nav{
+    background:#121212;
+    border-radius:1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    height:100px;
+    padding:0.5rem 0.75rem;
+}
+
+.nav-option{
+    display:flex;
+    align-items:center;
+    line-height:2.5rem;
+    padding:0.5rem 0.75rem;
+    opacity:.7;
+    transition:.3s;
+}
+
+.nav-option:hover{
+    opacity:1;
+}
+
+.nav-option i{
+    font-size:1.25rem;
+}
+
+.nav-option a{
+    margin-left:1rem;
+    font-size:1rem;
+}
+
+/* ==========================
+   LIBRARY
+========================== */
+
+.library{
+    background:#121212;
+    border-radius:1rem;
+    margin-top:0.5rem;
+    height:calc(100vh - 110px);
+    overflow-y:auto;
+    padding:0.5rem 0.75rem;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.lib-option img{
+    width:1.25rem;
+    height:1.25rem;
+}
+
+.icons{
+    display:flex;
+    gap:1rem;
+    font-size:1.25rem;
+}
+
+.icons i{
+    opacity:.7;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.icons i:hover{
+    opacity:1;
+    transform:scale(1.1);
+}
+
+/* ==========================
+   LIBRARY BOXES
+========================== */
+
+.box{
+    background:#232323;
+    border-radius:.75rem;
+    padding:.9rem 1rem;
+    margin:.75rem 0 1rem;
+}
+
+.box-p1{
+    font-size:1rem;
+    font-weight:600;
+    margin-bottom:.5rem;
+}
+
+.box-p2{
+    font-size:.85rem;
+    opacity:.8;
+    margin-bottom:.75rem;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.badge{
+    background:#fff;
+    color:#000;
+    border:none;
+    border-radius:100px;
+    white-space:nowrap;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.badge:hover{
+    transform:scale(1.05);
+}
+
+.dark-badge{
+    background:#000;
+    color:#fff;
+}
+
+/* ==========================
+   STICKY NAVBAR
+========================== */
+
+.sticky-nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 0;
+    background:#121212;
+}
+
+.sticky-nav-icons{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.sticky-nav-icons img{
+    cursor:pointer;
+}
+
+.sticky-nav-options{
+    display:flex;
+    align-items:center;
+}
+
+.nav-item{
+    margin-right:1rem;
+}
+
+.menu-btn{
+    display:none;
+    font-size:1.4rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    color:#1DB954;
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h2{
+    margin:1.5rem 0 1rem;
+    font-size:1.4rem;
+}
+
+/* ==========================
+   PLAYLIST CARDS
+========================== */
+
+.cards-container{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(160px,1fr));
+
+gap:20px;
+
+}
+
+.card{
+    width: 100%;
+    margin:0;
+    background:#232323;
+    border-radius:.75rem;
+    padding:1rem;
+    /* margin:1rem 0 0 1.5rem; */
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+#recent-card {
+    width:180px;
+}
+
+.card:hover{
+    background:#2b2b2b;
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+.card-img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:.5rem;
+}
+
+.card-title{
+    margin-top:.8rem;
+    font-weight:600;
+}
+
+.card-info{
+    margin-top:.5rem;
+    font-size:.85rem;
+    opacity:.6;
+    line-height:1.35;
+}
+
+.card.active {
+    background:#1db954;
+    transform:scale(1.03);
+}
+
+.card.active .card-title {
+    color:black;
+}
+
+.card.active .card-info {
+    color:black;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.line{
+    width:90%;
+    border-top:1px solid rgba(255,255,255,.4);
+}
+
+/* ==========================
+   MUSIC PLAYER
+========================== */
+
+.music-player{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:72px;
+    background:#000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid #282828;
+    z-index:1000;
+}
+
+/* ==========================
+   ALBUM SECTION
+========================== */
+
+.album{
+    flex:1;
+    min-width:220px;
+    display:flex;
+    align-items:center;
+    padding-left:1rem;
+}
+
+.album-icon{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.album-img,
+#album-image{
+    width:56px;
+    height:56px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.album-img:hover,
+#album-image:hover{
+    transform:scale(1.06);
+}
+
+.song-details{
+    display:flex;
+    flex-direction:column;
+}
+
+.song-details p{
+    margin:2px 0;
+}
+
+#song-title{
+    font-size:.95rem;
+    font-weight:600;
+}
+
+#artist-name{
+    font-size:.75rem;
+    color:#b3b3b3;
+}
+
+#like-btn{
+    margin-left:.5rem;
+    font-size:1.1rem;
+    color:#b3b3b3;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#like-btn:hover{
+    color:#1DB954;
+    transform:scale(1.2);
+}
+
+/* ==========================
+   PLAYER
+========================== */
+
+.player{
+    flex:2;
+}
+
+.player-control{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1.6rem;
+}
+
+.player-control-icon{
+    height:1rem;
+    opacity:.7;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.player-control-icon:hover{
+    opacity:1;
+    transform:scale(1.1);
+}
+
+/* Play button */
+
+#play-btn{
+    height:2rem;
+}
+
+#play-btn:hover{
+    transform:scale(1.15);
+}
+
+/* ==========================
+   PLAYBACK BAR
+========================== */
+
+.playback-bar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:.8rem;
+    margin-top:.5rem;
+}
+
+.curr-time,
+.tot-time{
+    font-size:.75rem;
+    color:#b3b3b3;
+}
+
+.progress-bar{
+    width:70%;
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+.progress-bar::-webkit-slider-runnable-track{
+    height:4px;
+    background:#b3b3b3;
+    border-radius:100px;
+}
+
+.progress-bar::-webkit-slider-thumb{
+    appearance:none;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:#1DB954;
+    margin-top:-4.5px;
+}
+
+.progress-bar:hover::-webkit-slider-thumb{
+    transform:scale(1.1);
+}
+
+/* ==========================
+   RIGHT CONTROLS
+========================== */
+
+.controls{
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:1rem;
+    padding-right:1rem;
+}
+
+.control-icon{
+    color:#b3b3b3;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.control-icon:hover{
+    color:#fff;
+    transform:scale(1.1);
+}
+
+/* ==========================
+   VOLUME BAR
+========================== */
+
+.volume-bar{
+    width:100px;
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+.volume-bar::-webkit-slider-runnable-track{
+    height:4px;
+    background:#b3b3b3;
+    border-radius:100px;
+}
+
+.volume-bar::-webkit-slider-thumb{
+    appearance:none;
+    width:13px;
+    height:13px;
+    background:#1DB954;
+    border-radius:50%;
+    margin-top:-4.5px;
+}
+
+/* ==========================
+   INPUT FOCUS
+========================== */
+
+input:focus{
+    outline:none;
+}
+
+/* ==========================
+   IMAGE HOVER
+========================== */
+
+.card-img{
+    transition:.3s;
+}
+
+.card:hover .card-img{
+    transform:scale(1.04);
+}
+
+/* ==========================
+   SMOOTH TRANSITIONS
+========================== */
+
+img,
+button,
+i,
+input{
+    transition:.3s ease;
+}
+
+/* OverLay  */
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:1500;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:1000px){
+
+    .hide{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    /* .sidebar{
+        position:absolute;
+        height:100%;
+    } */
+
+    .album{
+        width:35%;
+    }
+
+    .player{
+        width:65%;
+    }
+
+    .controls{
+        display:none;
+    }
+
+    .card{
+        width:170px;
+    }
+}
+
+@media (max-width:700px){
+
+    .main{
+        padding:0;
+    }
+
+    .sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        width:300px;
+        height:100vh;
+        transform:translateX(-100%);
+        transition:.35s ease;
+        z-index:2000;
+    }
+
+    .sidebar.show{
+        transform:translateX(0);
+    }
+
+    .main_content{
+        border-radius:0;
+        padding:0 1rem;
+    }
+
+    .sticky-nav{
+        padding:.8rem 0;
+    }
+
+    .card{
+        width:100%;
+        margin-left:0;
+    }
+
+    .cards-container{
+        gap:1rem;
+    }
+
+    .album{
+        display:none;
+    }
+
+    .player{
+        width:100%;
+    }
+
+    .music-player{
+        height:auto;
+        padding:10px;
+        flex-wrap:wrap;
+    }
+
+    .progress-bar{
+        width:65%;
+    }
+}
+
+@media (max-width:480px){
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    .sticky-nav-options .badge{
+        display:none;
+    }
+
+    .player-control{
+        gap:1rem;
+    }
+
+    .progress-bar{
+        width:55%;
+    }
+
+    .curr-time,
+    .tot-time{
+        font-size:.65rem;
+    }
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card{
+    animation:fadeIn .4s ease;
+}
+
