@@ -1,7 +1,3 @@
-// ==============================
-// Spotify Clone JavaScript
-// ==============================
-
 const audio = document.getElementById("audio-player");
 const playBtn = document.getElementById("play-btn");
 const prevBtn = document.getElementById("prev-btn");
@@ -26,9 +22,7 @@ let currentSong = 0;
 let isShuffle = false;
 let isRepeat = false;
 
-// ==============================
 // Song List
-// ==============================
 
 const songs = [
 {
@@ -87,9 +81,7 @@ image:"./assets/card1img.jpeg"
 }
 ];
 
-// ==============================
 // Load Song
-// ==============================
 
 function loadSong(index){
 
@@ -111,9 +103,7 @@ cards[index].classList.add("active");
 
 loadSong(0);
 
-// ==============================
 // Play Song
-// ==============================
 
 function playSong(){
 
@@ -122,9 +112,7 @@ playBtn.src = "./assets/pause.png";
 
 }
 
-// ==============================
 // Pause Song
-// ==============================
 
 function pauseSong(){
 
@@ -133,9 +121,7 @@ playBtn.src = "./assets/player_icon3.png";
 
 }
 
-// ==============================
 // Play Button
-// ==============================
 
 playBtn.addEventListener("click",()=>{
 
@@ -151,9 +137,7 @@ pauseSong();
 
 });
 
-// ==============================
 // Click Card
-// ==============================
 
 cards.forEach((card,index)=>{
 
@@ -167,9 +151,7 @@ playSong();
 
 });
 
-// ==============================
-// Next
-// ==============================
+// Next Button
 
 nextBtn.addEventListener("click",()=>{
 
@@ -195,9 +177,7 @@ playSong();
 
 });
 
-// ==============================
-// Previous
-// ==============================
+// Previous Button
 
 prevBtn.addEventListener("click",()=>{
 
@@ -215,9 +195,7 @@ playSong();
 
 });
 
-// ==============================
 // Progress
-// ==============================
 
 audio.addEventListener("timeupdate",()=>{
 
@@ -231,9 +209,7 @@ totalTime.textContent=formatTime(audio.duration);
 
 });
 
-// ==============================
 // Seek
-// ==============================
 
 progress.addEventListener("input",()=>{
 
@@ -241,9 +217,7 @@ audio.currentTime=(progress.value/100)*audio.duration;
 
 });
 
-// ==============================
 // Volume
-// ==============================
 
 volume.addEventListener("input",()=>{
 
@@ -251,9 +225,7 @@ audio.volume=volume.value/100;
 
 });
 
-// ==============================
 // Song End
-// ==============================
 
 audio.addEventListener("ended",()=>{
 
@@ -269,9 +241,7 @@ nextBtn.click();
 
 });
 
-// ==============================
-// Shuffle
-// ==============================
+// Shuffle Button
 
 shuffleBtn.addEventListener("click",()=>{
 
@@ -281,9 +251,7 @@ shuffleBtn.style.opacity=isShuffle?1:0.5;
 
 });
 
-// ==============================
-// Repeat
-// ==============================
+// Repeat Button
 
 repeatBtn.addEventListener("click",()=>{
 
@@ -293,9 +261,7 @@ repeatBtn.style.opacity=isRepeat?1:0.5;
 
 });
 
-// ==============================
-// Like
-// ==============================
+// Like Button
 
 likeBtn.addEventListener("click",()=>{
 
@@ -319,9 +285,7 @@ likeBtn.style.color="white";
 
 });
 
-// ==============================
 // Time Format
-// ==============================
 
 function formatTime(seconds){
 
@@ -335,9 +299,7 @@ return `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
 
 }
 
-// ==============================
-// Mobile Menu
-// ==============================
+// Mobile Menu Button
 
 const menuBtn=document.getElementById("menu-btn");
 const sidebar=document.querySelector(".sidebar");
