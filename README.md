@@ -2,10 +2,6 @@
 
 A Spotify-inspired responsive web music player built using **HTML, CSS, and JavaScript**, featuring playback controls, playlists, and interactive UI components.. This project recreates the look and feel of Spotify's web player while implementing core music player functionality.
 
-## 🌐 Live Demo
-
-[View Live Demo](https://niteshp123.github.io/Spotify-Clone/)
-
 ## 📸 Preview
 
 [View Screenshot](./assets/screenshot.png)
